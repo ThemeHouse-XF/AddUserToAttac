@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="ThemeHouse_AddUserToAttac" title="[⌂] Add Username To Attachment" version_string="1.0.0" version_id="1447261019" url="http://xf.themehouse.io/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="load_class_controller" execute_order="10" callback_class="ThemeHouse_AddUserToAttac_Listener_LoadClassController" callback_method="loadClassController" active="1" hint="" description=""/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups>
+    <group group_id="th_addUserToAttach" display_order="2000" debug_only="0"/>
+    <option option_id="th_addUserToAttach_userGroups" edit_format="callback" data_type="array" can_backup="1">
+      <default_value/>
+      <edit_format_params>ThemeHouse_AddUserToAttac_Option_UserGroups::renderOption</edit_format_params>
+      <sub_options>*</sub_options>
+      <relation group_id="th_addUserToAttach" display_order="1"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="option_group_th_addUserToAttach" version_id="0" version_string="1.0.0"><![CDATA[Add Username To Attachment Options]]></phrase>
+    <phrase title="option_group_th_addUserToAttach_description" version_id="0" version_string="1.0.0"><![CDATA[Options for the Add Username To Attachment by ThemeHouse add-on.]]></phrase>
+    <phrase title="option_th_addUserToAttach_userGroups" version_id="0" version_string="1.0.0"><![CDATA[Affected user groups]]></phrase>
+    <phrase title="option_th_addUserToAttach_userGroups_explain" version_id="0" version_string="1.0.0"><![CDATA[Members of the selected user groups will have their username appended to the filename of any attachment they download.]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <public_template_modifications>
+    <modification template="footer" modification_key="th_copyrightNotice_addUserToAttac" description="Copyright notice for [⌂] Add Username To Attachment" execution_order="1" enabled="1" action="callback">
+      <find><![CDATA[/{xen:phrase (?:xenforo|extra)_copyright}/]]></find>
+      <replace><![CDATA[ThemeHouse_Listener_InitDependencies::copyrightNotice]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
